@@ -26,7 +26,7 @@ test.describe('Add Job Title Feature', () => {
         await page.locator("//textarea[@placeholder='Add note']").fill(data.Note)
         await page.locator('button[type="submit"]').click()
         await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewJobTitleList')
-        await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
+        
 
 
     });

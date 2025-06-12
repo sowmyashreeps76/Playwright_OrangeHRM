@@ -5,9 +5,9 @@ test("Verify login with valid credentials", async ({page})=>{
 
 await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
-await page.locator("input[name='username']").fill(logindata.username)
+await page.locator("input[name='username']").fill(process.env.ORG_USERNAME)
 
-await page.locator("input[type='password']").fill(logindata.password)
+await page.locator("input[type='password']").fill(process.env.ORG_PASSWORD)
 
 await page.locator("button[type='submit']").click()
 
@@ -21,9 +21,9 @@ test("Verify login with Invalid username and valid password", async ({page})=>{
 
 await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
-await page.locator("input[name='username']").fill("abcd7699")
+await page.locator("input[name='username']").fill("whgeiuw")
 
-await page.locator("input[type='password']").fill("admin123")
+await page.locator("input[type='password']").fill(process.env.ORG_PASSWORD)
 
 await page.locator("button[type='submit']").click()
 
@@ -36,7 +36,7 @@ test("Verify login with valid username and Invalid password", async ({page})=>{
 
 await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
-await page.locator("input[name='username']").fill("Admin")
+await page.locator("input[name='username']").fill(process.env.ORG_USERNAME)
 
 await page.locator("input[type='password']").fill("admhghjin123")
 

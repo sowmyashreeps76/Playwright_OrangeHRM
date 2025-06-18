@@ -3,13 +3,16 @@ import logindata from "../OrangeHRM/testData/login.json"
 
 test("Verify login with valid credentials", async ({page})=>{
 
-    const username ="Admin"
+    const creds = {
+         username :"Admin",
+         password :"admin123"
+    }
 
 await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
-await page.locator("input[name='username']").fill(username)
+await page.locator("input[name='username']").fill(creds.username)
 
-await page.locator("input[type='password']").fill(process.env.ORG_PASSWORD)
+await page.locator("input[type='password']").fill(creds.password)
 
 await page.locator("button[type='submit']").click()
 

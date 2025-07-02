@@ -99,3 +99,54 @@ else {
     console.log("element is not present")
 }
 
+// indexOf()
+console.log(reparr.indexOf("eat"))
+
+// concat() nto join arrays
+
+arra2 = ["sowmya", "anjali", "gagan", "Raju", "yashu", "gowthami"]
+arra3 = [ 'drink', 'eat', 'study', 'sleep' ]
+
+arra5 = arra2.concat(arra3)
+console.log(arra5)
+
+// slice() 
+console.log(arra2.slice(0,5))
+
+// splice()
+arra4 = arra2.splice(1,4)
+console.log(arra4)
+
+// recently indroduced methods are : 
+// filter()
+// map()
+// reduce()
+
+// filter - based on some condition filtering the elements
+// map()
+
+
+// forEach loop
+// loop all the array elements one by one
+
+// syntax 
+// arrayname.forEach(element => {
+    // block of code
+    // })
+
+    arra3 = [ 'drink', 'eat', 'study', 'sleep' ]
+
+    // arra3.forEach (Element => {
+    //     console.log("loop starts")
+    //     console.log(Element)
+    //     console.log("loop ends")
+    //  })
+
+
+    //  for of
+
+    for (let element of arra3) {
+        console.log("loop starts")
+        console.log(element)
+        console.log("loop ends")
+    }

@@ -1,10 +1,17 @@
 import { test, expect } from '@playwright/test';
 import logindata from "../OrangeHRM/testData/login.json"
 
+let page
 
 
 test.describe("Verify login functionality", async() => {  // Grouping the test cases
 
+test.beforeEach(async ({browser}) => {
+
+    page = await browser.newPage()
+    
+await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+})
 
 test("Verify login with valid credentials", async ({page})=>{
 
@@ -13,7 +20,7 @@ test("Verify login with valid credentials", async ({page})=>{
          password :"admin123"
     }
 
-await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
 
 await page.locator("input[name='username']").fill(creds.username)
 
@@ -27,7 +34,7 @@ await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/inde
 
 test("Verify login with Invalid username and valid password", async ({page})=>{
 
-await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
 
 await page.locator("input[name='username']").fill("whgeiuw")
 
@@ -42,7 +49,7 @@ await expect(page.locator("p.oxd-text.oxd-text--p.oxd-alert-content-text")).toBe
 
 test("Verify login with valid username and Invalid password", async ({page})=>{
 
-await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
 
 await page.locator("input[name='username']").fill(process.env.ORG_USERNAME)
 
@@ -58,7 +65,7 @@ await expect(page.locator("p.oxd-text.oxd-text--p.oxd-alert-content-text")).toBe
 
 test("Verify login with Invalid username and Invalid password", async ({page})=>{
 
-await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
 
 await page.locator("input[name='username']").fill("abcd7699")
 

@@ -22,7 +22,7 @@ for (let emp in employees) {
 
 
 const creds = ["Admin", "admin123"]
-test(`Verify Add Employee DDT ${emp}`, async ({ page }) => {
+test(`Verify Add Employee DDT ${emp}`, {tag : ["@smoke", "@sowmya"]}, async ({ page }) => {
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill(creds[0]);

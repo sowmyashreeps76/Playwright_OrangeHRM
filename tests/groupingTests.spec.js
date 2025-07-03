@@ -11,7 +11,7 @@ test.describe("Group1", () => {
         console.log("test1");
 
     })
-    test("test2", () => {
+    test("test2", {tag : ["@smoke", "@sowmya"]}, () => {
         console.log("test2");
 
     })
